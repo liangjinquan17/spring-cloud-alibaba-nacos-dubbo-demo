@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-	@Reference
-	private IUserRemote userRemote;
+	/**
+	 * 快速失败，只调用一次
+	 * 轮训模式
+	 * */
+	// @Reference( retries = 1, cluster = "failsafe", loadbalance = "leastactive", registry={"z1"} )
+	// private IUserRemote userRemote;
 
 	@GetMapping("hello")
 	public String hello() {
@@ -19,6 +23,7 @@ public class UserController {
 
 	@GetMapping("getName")
 	public String getName(){
-		return "dubbo name:"+userRemote.getName();
+		// return "dubbo name:"+userRemote.getName();
+		return null;
 	}
 }
