@@ -35,6 +35,40 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- spring cloud alibaba dependencies -->
+		<dependency>
+		    <groupId>com.alibaba.cloud</groupId>
+		    <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+		    <version>2.2.3.RELEASE</version>
+		    <type>pom</type>
+		</dependency>
+
+		<!-- Sample API -->
+	    <dependency>
+		<groupId>com.example.springcloud</groupId>
+		<artifactId>dubbo-remote</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <!-- Spring Boot dependencies -->
+	    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-actuator</artifactId>
+		<version>2.4.1</version>
+	    </dependency>
+
+	    <!-- Dubbo Spring Cloud Starter -->
+	    <dependency>
+		<groupId>com.alibaba.cloud</groupId>
+		<artifactId>spring-cloud-starter-dubbo</artifactId>
+		<version>2.2.3.RELEASE</version>
+	    </dependency>
+
+	    <!-- Spring Cloud Nacos Service Discovery -->
+	    <dependency>
+		<groupId>com.alibaba.cloud</groupId>
+		<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		<version>2.2.3.RELEASE</version>
+	    </dependency>
 	</dependencies>
 
 	<build>
