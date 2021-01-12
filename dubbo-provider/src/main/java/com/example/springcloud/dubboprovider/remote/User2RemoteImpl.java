@@ -1,19 +1,24 @@
 package com.example.springcloud.dubboprovider.remote;
 
-import java.util.Date;
 import java.util.concurrent.CompletableFuture;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.example.springcloud.dubboremote.remote.IUserRemote;
 
-@Service(group = "user", version = "1.0.1", token = "true")
-public class UserRemoteImpl implements IUserRemote{
+@Service(group = "user1", version = "1.0.2", token = "true")
+public class User2RemoteImpl implements IUserRemote{
 
 	@Override
 	public String getName() {
-		System.out.println("new Date:"+new Date());
+		System.out.println("开启调用");
 		// TODO Auto-generated method stub
-		return "my name is liangjinquan 1";
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "my name is xiaobu 2";
 	}
 
 	@Override
@@ -27,8 +32,8 @@ public class UserRemoteImpl implements IUserRemote{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			return "异步执行完毕";
+
+			return "执行完毕";
 		});
 	}
 
