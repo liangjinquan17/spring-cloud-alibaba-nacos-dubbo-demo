@@ -1,0 +1,17 @@
+package com.example.springcloud.security.rest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController{
+
+	@GetMapping("/hello")
+	public String hello(){
+		List list = new ArrayList();
+		return "hello security";
+	}
+}
