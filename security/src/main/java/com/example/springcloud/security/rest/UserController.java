@@ -14,4 +14,9 @@ public class UserController{
 		List list = new ArrayList();
 		return "hello security";
 	}
+
+	@GetMapping("/getName")
+	public String getName(){
+		return "不用鉴权";
+	}
 }

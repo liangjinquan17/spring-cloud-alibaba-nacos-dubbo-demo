@@ -40,8 +40,15 @@ public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/getName").permitAll().anyRequest().authenticated().and().formLogin();
+		// http.authorizeRequests().antMatchers("/getName").permitAll().anyRequest().authenticated();
+		http.authorizeRequests().antMatchers("/getName").permitAll().anyRequest().hasRole("admin");
 
+		// http.csrf().disable();
+		// 	http.authorizeRequests()
+		// 		.antMatchers("/actuator/**").permitAll()
+		// 		.antMatchers("/loginForwad/**").permitAll()
+		// 		.antMatchers("/loginForwad").permitAll()
+		// 		.anyRequest().authenticated();
 	}
 	
 	@Override
